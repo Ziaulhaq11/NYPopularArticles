@@ -1,11 +1,12 @@
-const ArticlesRenderer = ({articles}) => {
+import { Link } from "react-router-dom";
+const ArticlesRenderer = ({ articles }) => {
   return (
     <div className="articles">
       {articles.map((article) => (
         <div className="article" key={article.id}>
-          <a href={article.url} target="_blank" rel="noopener noreferrer">
+          <Link to="/article" state={article}>
             <h3>{article.title}</h3>
-          </a>
+          </Link>
           <h5>{article.abstract}</h5>
           <div className="details">
             <p>
@@ -21,4 +22,4 @@ const ArticlesRenderer = ({articles}) => {
   );
 };
 
-export default ArticlesRenderer
+export default ArticlesRenderer;

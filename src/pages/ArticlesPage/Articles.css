@@ -29,10 +29,16 @@
   }
 }
 
+.articles-container h1 {
+  width: fit-content;
+  /* margin: auto; */
+  padding: 10px;
+}
 .articles {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 
 .article {
   border: 0.5px solid grey;

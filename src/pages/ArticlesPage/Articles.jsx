@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Articles.css";
-import ArticlesRenderer from "../components/ArticlesRenderer";
+import ArticlesRenderer from "../../components/ArticlesRenderer";
 
 const url =
   "https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=KrZBodWefz6sgBGFH9yCCY5VQVSIREga";
