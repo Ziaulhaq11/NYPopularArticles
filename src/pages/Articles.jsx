@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Articles.css";
+import ArticlesRenderer from "../components/ArticlesRenderer";
+
 const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,28 +20,15 @@ const Articles = () => {
   }, []);
 
   if (loading) {
-    return <h1>Loading....</h1>;
-  } else if (articles.length === 0) {
-    return <h1>No Data Found</h1>;
+    return <div class="loader"></div>
+  } else if (!articles || articles.length === 0) {
+    return <h1>No Articles Found</h1>;
   }
 
   return (
     <div className="articles-container">
       <h1>NY Times Most Popular Articles</h1>
-      <div className="articles">
-        {articles.map((article) => (
-          <div className="article" key={article.id}>
-            <a href={article.url} target="_blank" rel="noopener noreferrer">
-              <h3>{article.title}</h3>
-            </a>
-            <h5>{article.abstract}</h5>
-            <div className="details">
-              <p>Published on <b>{article.published_date}</b></p>
-              <p><b>{article.byline}</b></p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <ArticlesRenderer articles={articles} />
     </div>
   );
 };

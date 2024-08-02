@@ -22,7 +22,9 @@ describe("Articles Component Test Case", () => {
   test("Data Rendering Properly or not", async () => {
     render(<Articles />);
     const title = await screen.findByText(`Election 2024 Polls: The Harris vs. Trump Matchup`)
+    const description = await screen.findByText(`Our polling averages track the latest trends in the presidential race, using data from national and battleground state polls.`)
     expect(title).toBeInTheDocument()
+    expect(description).toBeInTheDocument()
   })
 })
 
