@@ -1,0 +1,16 @@
+.articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.article {
+    border: .5px solid grey;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.article .details {
+    display: flex;
+    gap: 20px;
+}
